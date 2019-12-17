@@ -40,6 +40,9 @@ The configuration is stored in a YAML file like this:
       - match: "*"
         maxage: 1 hour
 
+      - match: "index.html"
+        cache_control: no-cache
+
 The ``site`` is the directory of the static website relative to the location
 of the configuration file. For example, Jekyll will generate the static site
 in the ``_site`` directory as specified above. If you save the configuration
@@ -100,6 +103,7 @@ Configuration file
     first rule to match a given key will be used. The ``maxage`` key
     specifies the time to cache the file. The value should be either a number
     of seconds or a string like ``30 days``, ``5 minutes, 30 seconds``, etc.
+    The ``cache_control`` key allows you to set ``no-cache``.
 
 **endpoint_url**
     (Optional) For setting custom endpoint for boto3:
